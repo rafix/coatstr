@@ -1,0 +1,58 @@
+services:
+    app_main.admin.standards:
+        class: App\MainBundle\Admin\StandardsAdmin
+        arguments: [~, App\MainBundle\Entity\Standards, AppMainBundle:StandardsAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Standards}
+        calls:
+#            - [setSecurityContext,[@security.context]]
+#            - [setPoolFormatter,[@sonata.formatter.pool]]
+            - [setTemplates, [{ base_list_field: SonataAdminBundle:CRUD:base_list_flat_field.html.twig, inner_list_row: AppMainBundle:Admin:inner_row_standards.html.twig }]]
+
+    app_main.admin.organization:
+        class: App\MainBundle\Admin\OrganizationAdmin
+        arguments: [~, App\MainBundle\Entity\Organization, AppMainBundle:OrganizationAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Organization}
+
+    app_main.admin.asset:
+        class: App\MainBundle\Admin\AssetAdmin
+        arguments: [~, App\MainBundle\Entity\Asset, AppMainBundle:AssetAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Asset}
+
+    app_main.admin.industry:
+        class: App\MainBundle\Admin\IndustryAdmin
+        arguments: [~, App\MainBundle\Entity\Industry, AppMainBundle:IndustryAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Industry}
+
+    app_main.admin.environment:
+        class: App\MainBundle\Admin\EnvironmentAdmin
+        arguments: [~, App\MainBundle\Entity\Environment, AppMainBundle:EnvironmentAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Environment}
+
+    app_main.admin.location:
+        class: App\MainBundle\Admin\LocationAdmin
+        arguments: [~, App\MainBundle\Entity\Location, AppMainBundle:LocationAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Location}
+
+    app_main.admin.process:
+        class: App\MainBundle\Admin\ProcessAdmin
+        arguments: [~, App\MainBundle\Entity\Process, AppMainBundle:ProcessAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Process}
+
+    app_main.admin.standard_type:
+        class: App\MainBundle\Admin\StandardTypeAdmin
+        arguments: [~, App\MainBundle\Entity\StandardType, AppMainBundle:StandardTypeAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: StandardType}
+
+    app_main.admin.substrate:
+        class: App\MainBundle\Admin\SubstrateAdmin
+        arguments: [~, App\MainBundle\Entity\Substrate, AppMainBundle:SubstrateAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Substrate}

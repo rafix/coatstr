@@ -1,0 +1,113 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {% stylesheets '@FaoMainBundle/Resources/public/css/bootstrap.css'
+    '@FaoMainBundle/Resources/public/css/changes.css'
+    filter='yui_css'
+    output='css/cvrf.css'%}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div id="wrap">
+
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container globalcontainer">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{path('fao_main_homepage')}}"><img style="height: 60px" src="{{asset("bundles/faomain/images/logo.png")}}"></a>
+                </div>
+                <div class="collapse navbar-collapse">
+
+
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ path('fao_main_category') }}">Categor&iacute;as</a></li>
+
+                        <li><a href="http://www.fao.org/forestry/material-educativo/base-de-datos/bd/es/">FAO</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if not is_granted('ROLE_USER') %}
+                            <li><a href="{{ path('fos_user_registration_register') }}">Registrarse</a></li>
+                            <li><a href="{{ path('fos_user_security_login') }}">Entrar</a></li>
+                            <!--li class="dropdown">
+                                <a id="navLogin" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Login
+                                </a>
+                                <div class="dropdown-menu" style="padding:17px; background-color: #008000">
+                                    <form id="formLogin" class="form">
+                                        <label>
+                                            Login
+                                        </label>
+                                        <input id="token" type="hidden" value="OIu1K1slPvBbdNB8Yd9UuyrT5uRS252tnnns4=" name="_csrf"/>
+                                        <input id="username" type="text" required="" title="Enter your username" data-valid-min="6" pattern="^[a-z,A-Z,0-9,_]{6,15}$" placeholder="Username" name="username"/>
+                                        <input id="password" type="password" required="" title="Enter your password" placeholder="Password" name="password"/>
+                                        </br>
+                                        <button id="btnLogin" class="btn" type="button">
+                                            Login
+                                        </button>
+                                    </form>
+                                </div>
+                            </li-->
+                        {% else %}
+                            <li><a href="{{ path('sonata_admin_dashboard') }}">Administrar</a></li>
+                            <li><a href="{{ path('fos_user_security_logout') }}">Salir</a></li>
+                        {% endif %}
+                    </ul>
+                    <div id="sb-search" class="sb-search busqueda">
+                        <form action="{{ path('fao_main_search') }}" method="get">
+                            <input class="sb-search-input" placeholder="Buscar" type="text" value="" name="q" id="search">
+                            <input class="sb-search-submit" type="submit" value="">
+                            <span class="sb-icon-search"></span>
+                        </form>
+                    </div>
+
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        {% block jumbotron %}
+        {% endblock %}
+
+        <div class="container">
+            {% block content %}{% endblock %}
+
+        </div><!-- /.container -->
+    </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+                <h3>Contacto</h3>
+                <p>
+                    Comunidad Virtual de Recursos Forestales <br />
+                    Universidad de Pinar del Rio <br />
+                    Edificio Docente 4to piso, Marti #300, Pinar del Rio. <br />
+                    cvforestal@upr.edu.cu
+                </p>
+        </div>
+    </div>
+    <div class="container">
+        <a style="float: right !important;" href="{{ path('fao_main_terminos') }}">T&eacute;rminos y Condiciones</a>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts '@FaoMainBundle/Resources/public/js/jquery-1.10.2.min.js'
+    '@FaoMainBundle/Resources/public/js/bootstrap.js'
+    '@FaoMainBundle/Resources/public/js/classie.js'
+    '@FaoMainBundle/Resources/public/js/uisearch.js'
+    filter='yui_js'
+    output='js/cvrf.js' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+    <script>
+        new UISearch( document.getElementById( 'sb-search' ) );
+    </script>
+{% endblock %}
