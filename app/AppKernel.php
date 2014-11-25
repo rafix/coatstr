@@ -43,13 +43,12 @@ class AppKernel extends Kernel
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
 
             // NEWS
-//            new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
 
             // SONATA CORE & HELPER BUNDLES
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
-            new Sonata\jQueryBundle\SonatajQueryBundle(),
+//            new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\IntlBundle\SonataIntlBundle(),
