@@ -1,7 +1,6 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    # - { resource: "@AppMainBundle/Resources/config/services.yml" }
     # Sonata Bundles
     - { resource: sonata/sonata_intl.yml }
     - { resource: sonata/sonata_admin.yml }

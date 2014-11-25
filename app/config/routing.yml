@@ -35,6 +35,11 @@ _sonata_admin:
     type: sonata_admin
     prefix: /admin
 
+sonata_admin_redirect:
+    pattern: /
+    defaults: { _controller: FrameworkBundle:Redirect:redirect, route: admin_app_main_standards_list, permanent: true }
+
+
 soanata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
     prefix: /admin

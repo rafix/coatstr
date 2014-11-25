@@ -14,10 +14,10 @@ sonata_cache:
 #                - {host: 127.0.0.1, port: 27017, user: username, password: pASS'}
 #                - {host: 127.0.0.2}
 #
-#        memcached:
-#            prefix: test     # prefix to ensure there is no clash between instances
-#            servers:
-#                - {host: 127.0.0.1, port: 11211, weight: 0}
+        memcached:
+            prefix: coatstr_m3mc4ch3d_app     # prefix to ensure there is no clash between instances
+            servers:
+                - {host: 127.0.0.1, port: 11211, weight: 0}
 #
 #        apc:
 #            token:  s3cur3   # token used to clear the related cache

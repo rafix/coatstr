@@ -37,6 +37,7 @@ security:
                 use_forward:    false
                 check_path:     /admin/login_check
                 failure_path:   null
+#                default_target_path:   admin_app_main_standards_list
             logout:
                 path:           /admin/logout
             anonymous:    true

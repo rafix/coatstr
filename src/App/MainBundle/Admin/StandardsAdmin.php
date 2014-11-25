@@ -20,15 +20,9 @@ class StandardsAdmin extends Admin
             ->add('itemNo')
             ->add('standardNo')
             ->add('organization')
-            ->add('abstract')
             ->add('link')
-            ->add('assets')
             ->add('industries')
-            ->add('environments')
             ->add('locations')
-            ->add('processes')
-            ->add('types')
-            ->add('substrates')
         ;
     }
 
