@@ -43,7 +43,7 @@ class AppKernel extends Kernel
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
 
             // NEWS
-            new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
+//            new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
 
             // SONATA CORE & HELPER BUNDLES
